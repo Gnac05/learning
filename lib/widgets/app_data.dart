@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_learn_get/core/app_constants.dart';
+import 'package:flutter_application_learn_get/core/constants/app_constants.dart';
 
 class AppData extends StatelessWidget {
   const AppData({Key? key, required this.index, required this.iscolor})

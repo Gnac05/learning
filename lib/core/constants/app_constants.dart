@@ -3,21 +3,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-
-// class AppCounter {
-//   incrementation() {
-//     counter++;
-//   }
-
-//   decrementation() {
-//     counter--;
-//   }
-
-//   doubleCounter() {
-//     counter *= 2;
-//   }
-// }
-
 int counter = 0;
 
 final int random1 = Random().nextInt(50);

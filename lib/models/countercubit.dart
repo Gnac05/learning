@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_learn_get/core/app_constants.dart';
+import 'package:flutter_application_learn_get/core/constants/app_constants.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -50,62 +50,5 @@ class CounterCubit extends Cubit<int> {
     }
     return Colors.white;
   }
-
-
-
-  // bool temp;
-  // Future<bool> isconnect() async {
-  //   bool isConnected = await InternetConnectionChecker().hasConnection;
-  //   if (isConnected == true) {
-  //     temp = true;
-  //     MyText("text");
-  //   } else {
-  //     temp = false;
-  //   }
-  //   print("isConnected");
-  //   print(isConnected.toString().toUpperCase());
-  //   print("temp");
-  //   print(temp);
-  //   return temp;
-  // }
-  // String mytext(){
-    
-  //   if (InternetConnectionChecker().hasConnection==true) {
-  //     print("connecté");
-  //     return "connecté";
-  //   }else{
-  //     print("déconnecté");
-  //     return "déconnecté";
-  //   }
-  // }
-  // Text MyText(String text){
-  //   return Text(text,style: TextStyle(color: Colors.white),);
-  // }
-
-  // String counterURL(int counter){
-  //   return baseurl+"$counter"+json;
-  // }
-
-  // Dio dio = Dio();
-  // Future<Response<Map<String,dynamic>>> getNumberAPI(int count) async{
-  //   String _url = counterURL(count);
-  //   Future<Response<Map<String,dynamic>>> _response;
-  //   try {
-  //     _response = dio.get(_url);
-  //   } on DioError catch (e) {
-  //     print(e.message);
-  //     throw Exception(e.message);
-  //   }
-  //   return _response;
-  // }
-
-  // Future<String> fromMap(int count) async{
-  // Response response =await getNumberAPI(count);  
-  // print(response);
-  // Map<String,dynamic> jsonAPI = response.extra;
-  // print(jsonAPI);
-  // // NumberAPI numberAPI = NumberAPI(jsonAPI["text"], jsonAPI["number"], jsonAPI["found"], jsonAPI["type"]);
-  // return jsonAPI["text"];
-  // }
 
 }

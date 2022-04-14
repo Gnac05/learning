@@ -13,7 +13,7 @@ part 'numbercubit_state.dart';
 class NumbercubitCubit extends Cubit<NumbercubitState> {
   final ApiRepository apiRepository;
   NumbercubitCubit({required this.apiRepository}) : super(NumbercubitInitial());
-  // void numberChange(){emit(state);}
+
   Future<void> getNumberApiCubit(int number) async {
     emit(NumbercubitLoading());
     try {
@@ -48,15 +48,7 @@ class NumbercubitCubit extends Cubit<NumbercubitState> {
     return isconnected;
   }
 
-  // final GlobalKey<ScaffoldState> sb = GlobalKey<ScaffoldState>();
-  // void showMeSnackBar(String text) {
-  //   // ignore: deprecated_member_use
-  //   sb.currentState?.showSnackBar(SnackBar(
-  //     content: Text(text),
-  //     backgroundColor: Colors.black,
-  //     duration: Duration(seconds: 1),
-  //     elevation: 1,
-  //   ));
+
   void showMeSnackBarDeconnection(BuildContext context, bool isconnected) {
     if (!isconnected) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -68,6 +60,5 @@ class NumbercubitCubit extends Cubit<NumbercubitState> {
     ));
     }
   }
-  // }
 
 }

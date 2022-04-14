@@ -1,21 +1,11 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_application_learn_get/core/api_constants.dart';
+import 'package:flutter_application_learn_get/core/constants/api_constants.dart';
 
 class Apiservice{
    Dio dio =Dio();
   Apiservice(){
     dio=Dio();
   }
-  // Future<Response<Map<String, dynamic>>?> getNumberData() async{
-  //     try {
-  //       final Response<Map<String,dynamic>> response = await dio.get(url);
-  //       print("RESPONSE : $response");
-  //       return response;
-  //     } catch (e) {
-  //       print("Error : $e");
-  //     }
-  //     return null;
-  // }
 
   Future<Response<Map<String, dynamic>>> getNumberDataService(int number) async {
 

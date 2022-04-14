@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_learn_get/core/app_constants.dart';
+import 'package:flutter_application_learn_get/core/constants/app_constants.dart';
 import 'package:flutter_application_learn_get/widgets/app_data.dart';
 
 class SettingPage extends StatelessWidget {
