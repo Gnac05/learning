@@ -17,7 +17,7 @@ class MyHomePage extends StatelessWidget {
           BlocProvider(
             create: (context) => NumbercubitCubit(
                 apiRepository: ApiRepository(apiservice: Apiservice()))
-              ..getNumberApiCubit(number),
+              ..getNumberApiCubit(number,context),
           ),
           BlocProvider(
             create: (context) => CounterCubit(),

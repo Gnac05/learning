@@ -1,0 +1,10 @@
+{
+    "language": "English",
+    "@language":{
+        "description": "The current Language"
+    },
+    "codeISO2": "en",
+    "@codeISO2":{
+        "description":"The code ISO2 of Language"
+    }
+}

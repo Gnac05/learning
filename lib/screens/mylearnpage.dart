@@ -66,12 +66,12 @@ class MyLearnPage extends StatelessWidget {
                     return Text(state.failure.message);
                   } else if (state is NumbercubitLoaded) {
                     NumberAPI numbersApi = state.numbersAPI;
-
                     // ignore: unnecessary_null_comparison
                     return numbersApi == null
                         ? const Text("No Text")
                         : Text(
-                            "${numbersApi.text}",
+                            "${numbersApi.text}" /* ${AppLocalizations.of(context)!.language.toString() */,
+                            // "${text}",
                             overflow: TextOverflow.clip,
                             style: TextStyle(fontSize: 20),
                           );
@@ -90,7 +90,7 @@ class MyLearnPage extends StatelessWidget {
               onPressed: () {
                 context.read<CounterCubit>().increment();
                 number++;
-                context.read<NumbercubitCubit>().getNumberApiCubit(number);
+                context.read<NumbercubitCubit>().getNumberApiCubit(number,context);
                 bool isconnected = context.read<NumbercubitCubit>().isconnect();
                 context
                     .read<NumbercubitCubit>()
@@ -107,7 +107,7 @@ class MyLearnPage extends StatelessWidget {
               onPressed: () {
                 context.read<CounterCubit>().decrement();
                 number--;
-                context.read<NumbercubitCubit>().getNumberApiCubit(number);
+                context.read<NumbercubitCubit>().getNumberApiCubit(number,context);
                 bool isconnected = context.read<NumbercubitCubit>().isconnect();
                 context
                     .read<NumbercubitCubit>()

@@ -7,6 +7,9 @@ import 'package:flutter_application_learn_get/models/failure_model.dart';
 import 'package:flutter_application_learn_get/models/numberAPI.dart';
 import 'package:flutter_application_learn_get/repository/api_repository.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import 'package:translator/translator.dart';
 
 part 'numbercubit_state.dart';
 
@@ -14,18 +17,31 @@ class NumbercubitCubit extends Cubit<NumbercubitState> {
   final ApiRepository apiRepository;
   NumbercubitCubit({required this.apiRepository}) : super(NumbercubitInitial());
 
-  Future<void> getNumberApiCubit(int number) async {
+  Future<void> getNumberApiCubit(int number,BuildContext context) async {
     emit(NumbercubitLoading());
     try {
       final NumberAPI? numbersAPI =
           await apiRepository.getNumberDataRepository(number);
-      emit(NumbercubitLoaded(numbersAPI: numbersAPI!));
+      GoogleTranslator translator = GoogleTranslator();
+   await translator.translate(numbersAPI!.text, to: AppLocalizations.of(context)!.codeISO2).then((value) async {
+      print(value.text);
+       numbersAPI.text = await value.text;
+    });    
+      emit(NumbercubitLoaded(numbersAPI: numbersAPI));
     } on Failure catch (er) {
       emit(NumbercubitError(failure: er));
     } catch (e) {
       print("Error : $e");
     }
   }
+
+  // void google_tranduction(String text, String code) {
+  //   GoogleTranslator translator = GoogleTranslator();
+  //   translator.translate(text, to: code).then((value) async {
+  //     print(value.text);
+  //      value.text;
+  //   });
+  // }
 
   bool isconnected = false;
   bool isconnect() {
